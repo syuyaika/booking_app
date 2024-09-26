@@ -1,0 +1,41 @@
+ja:
+  devise:
+    sessions:
+      new:
+        sign_in: 'ログイン'
+        log_in: 'ログイン'
+        remember_me: 'ログインを記憶する'
+        sign_up: '新規登録'
+        forgot_your_password: 'パスワードをお忘れですか？'
+
+    registrations:
+      new:
+        sign_up: '新規登録'
+    
+    passwords:
+      new:
+        forgot_password: 'パスワードをお忘れですか？'
+        reset_password: 'パスワードをリセットする'
+    
+    failure:
+      unauthenticated: 'ログインが必要です。'
+      invalid: 'メールアドレスまたはパスワードが正しくありません。'
+      not_found_in_database: 'メールアドレスまたはパスワードが正しくありません。'
+      user:
+        not_found_in_database: 'メールアドレスまたはパスワードが正しくありません。'
+
+  activerecord:
+    attributes:
+      user:
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード（確認用）'
+        remember_me: 'ログインを記憶する'
+        username: 'ユーザー名'
+
+  helpers:
+    submit:
+      session:
+        create: 'ログイン'
+      registration:
+        create: '新規登録'

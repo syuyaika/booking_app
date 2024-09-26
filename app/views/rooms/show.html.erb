@@ -1,0 +1,10 @@
+<h1>施設詳細</h1>
+
+<p>施設名: <%= @room.name %></p>
+<p>詳細: <%= @room.details %></p>
+<p>料金: <%= number_to_currency(@room.price) %> / 日</p>
+<p>住所: <%= @room.address %></p>
+<%= image_tag(@room.image_url || 'default_room.jpg', size: "300x300") %>
+
+<%= link_to '編集', edit_room_path(@room), class: 'btn btn-warning' if @room.user == current_user %>
+<%= link_to '戻る', rooms_path, class: 'btn btn-secondary' %>

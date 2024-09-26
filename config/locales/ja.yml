@@ -1,0 +1,53 @@
+ja:
+  helpers:
+    label:
+      user:
+        password: "パスワード"
+        password_confirmation: "パスワード（確認用）"
+  devise:
+    views:
+      password_min_length: '6文字以上'
+    registrations:
+      new:
+        sign_up: '新規登録'
+    registrations:
+      edit:
+        user_name: 'ユーザー名'
+        email: 'メールアドレス'
+        password: 'パスワード (変更したくない場合は空白のまま)' # 6 characters minimumの翻訳を追加
+        password_confirmation: 'パスワード（確認用）'
+        current_password: '現在のパスワード (変更を確認するために必要です)'
+        submit: '更新'
+        cancel: '戻る'      
+    sessions:
+      new:
+        log_in: 'ログイン'
+
+    failure:
+      user:
+        not_found_in_database: 'メールアドレスまたはパスワードが正しくありません。'
+      already_authenticated: 'すでにログインしています。'
+      unauthenticated: 'ログインが必要です。'
+      invalid: 'メールアドレスまたはパスワードが正しくありません。'
+    
+    passwords:
+      new:
+        reset_password: 'パスワードを再設定する'
+      edit:
+        change_password: 'パスワードを変更する'
+      update:
+        minimum_length: 'パスワードは6文字以上である必要があります。'
+
+    shared:
+      links:
+        sign_in: 'ログイン'
+        sign_up: '新規登録'
+        forgot_password: 'パスワードをお忘れですか？'
+
+  activerecord:
+    attributes:
+      user:
+        username: 'ユーザー名'
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード（確認用）'

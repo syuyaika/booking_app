@@ -1,0 +1,26 @@
+<h1>とりっぷ</h1>
+<%= link_to '新しい施設を作成', new_room_path, class: 'btn btn-primary' %>
+
+<table>
+  <thead>
+    <tr>
+      <th>画像</th>
+      <th>施設名</th>
+      <th>料金</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @rooms.each do |room| %>
+      <tr>
+        <td><%= image_tag(room.image_url || 'default_room.jpg', size: "100x100") %></td>
+        <td><%= link_to room.name, room %></td>
+        <td><%= number_to_currency(room.price) %></td>
+        <td>
+          <%= link_to '編集', edit_room_path(room), class: 'btn btn-warning' %>
+          <%= link_to '削除', room, method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
