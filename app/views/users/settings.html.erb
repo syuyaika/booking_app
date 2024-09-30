@@ -1,0 +1,41 @@
+<h1>設定</h1>
+
+<%= form_with model: @user, url: update_account_settings_path, local: true do |form| %>
+  <h2>アカウント情報</h2>
+  <div>
+    <%= form.label :email, "メールアドレス" %>
+    <p><%= @user.email %></p>
+  </div>
+  <div>
+   <p>パスワード:</strong> *********</p>
+  </div>
+
+  <div>
+  <%= link_to "アカウント情報の編集", edit_account_path %>
+</div>
+
+  <h2>プロフィール</h2>
+  <div>
+    <%= form.label :avatar, "アイコン画像" %>
+    <% if @user.avatar.attached? %>
+    <div>
+      <%= image_tag @user.avatar, size: "100x100" %> <!-- アバター画像を表示 -->
+    </div>
+  <% else %>
+    <p>アバター画像が設定されていません。</p>
+  <% end %>
+  </div>
+  <div>
+    <%= form.label :username, "名前" %>
+    <p><%= @user.username %></p>
+  </div>
+  <div>
+    <%= form.label :bio, "自己紹介" %>
+    <p><%= @user.bio %></p>
+  </div>
+
+<div>
+  <%= link_to "プロフィールの編集", edit_profile_path %>
+</div>
+
+<% end %>

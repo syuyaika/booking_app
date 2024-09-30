@@ -14,7 +14,7 @@ ja:
       edit:
         user_name: 'ユーザー名'
         email: 'メールアドレス'
-        password: 'パスワード (変更したくない場合は空白のまま)' # 6 characters minimumの翻訳を追加
+        password: 'パスワード (変更したくない場合は空白のまま)' 
         password_confirmation: 'パスワード（確認用）'
         current_password: '現在のパスワード (変更を確認するために必要です)'
         submit: '更新'
@@ -51,3 +51,7 @@ ja:
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード（確認用）'
+      reservation:
+        check_in: "チェックイン"
+        check_out: "チェックアウト"
+        guests: "人数"

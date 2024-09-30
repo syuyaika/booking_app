@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_room, only: [:show, :edit, :update, :destroy]
   def index
     if current_user
@@ -10,6 +10,7 @@ class RoomsController < ApplicationController
   end
 
   def show
+    @room
   end
 
   def new
@@ -42,7 +43,21 @@ class RoomsController < ApplicationController
   end
 
   def search
+    query = params[:query]
     @rooms = Room.where('name LIKE ? OR details LIKE ? OR address LIKE ?', "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
+    if params[:area].present?
+      @rooms = @rooms.where("address LIKE ?", "%#{params[:area]}%")
+    end
   end
-  
+
+  private
+
+  def set_room
+    @room = Room.find(params[:id])
+  end
+
+  def room_params
+    params.require(:room).permit(:name, :description, :price, :address, :image)
+  end
+
 end

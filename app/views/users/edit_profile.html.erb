@@ -1,0 +1,29 @@
+<h1>プロフィールの編集</h1>
+
+<%= form_with model: @user, url: update_profile_path, local: true do |form| %>
+  <div>
+    <%= form.label :avatar, "アイコン画像" %>
+    <%= form.file_field :avatar %>
+    <% if @user.avatar.attached? %>
+      <div>
+        <%= image_tag @user.avatar, size: "100x100" %>
+      </div>
+    <% else %>
+      <p>アバター画像が設定されていません。</p>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :username, "名前" %>
+    <%= form.text_field :username %>
+  </div>
+  <div>
+    <%= form.label :bio, "自己紹介" %>
+    <%= form.text_area :bio %>
+  </div>
+  <div>
+    <%= form.submit "保存" %>
+  </div>
+  <div>
+  <%= link_to 'キャンセル', account_settings_path, class: 'btn btn-secondary' %> <!-- キャンセルボタン -->
+  </div>
+<% end %>

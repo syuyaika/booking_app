@@ -1,2 +1,45 @@
-<h1>Rooms#new</h1>
-<p>Find me in app/views/rooms/new.html.erb</p>
+<h1>新しい施設を登録</h1>
+
+<% if @room.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@room.errors.count, "error") %> prohibited this room from being saved:</h2>
+    <ul>
+      <% @room.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+<%= form_with model: @room, local: true do |form| %>
+  <div>
+    <%= form.label :name, "施設名" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :description, "施設詳細" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :price, "宿泊料金" %>
+    <%= form.number_field :price %>
+  </div>
+
+  <div>
+    <%= form.label :address, "住所" %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div>
+    <%= form.label :image, "画像" %>
+    <%= form.file_field :image %>
+  </div>
+
+  <div>
+    <%= form.submit '登録' %>
+    <%= link_to 'キャンセル', :back, class: 'button' %>
+  </div>
+<% end %>

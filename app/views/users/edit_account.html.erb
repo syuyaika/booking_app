@@ -1,0 +1,22 @@
+<h1>アカウント情報の編集</h1>
+
+<%= form_with model: @user, url: update_account_path, local: true do |form| %>
+  <div>
+    <%= form.label :email, "メールアドレス" %>
+    <%= form.email_field :email %>
+  </div>
+  <div>
+    <%= form.label :password, "新しいパスワード" %>
+    <%= form.password_field :password %>
+  </div>
+  <div>
+    <%= form.label :password_confirmation, "パスワード確認" %>
+    <%= form.password_field :password_confirmation %>
+  </div>
+  <div>
+    <%= form.submit "保存" %>
+  </div>
+  <div>
+  <%= link_to 'キャンセル', account_settings_path, class: 'btn btn-secondary' %> <!-- キャンセルボタン -->
+  </div>
+<% end %>
