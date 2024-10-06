@@ -12,8 +12,11 @@
     </div>
   </div>
 
+<%= form_with model: [@room, @reservation], local: true do |form| %>
   <div class="text-center mt-4">
-    <%= link_to '確定', room_reservations_path(@reservation.room), method: :post, class: 'btn btn-primary me-2' %>
-    <%= link_to '戻る', new_room_reservation_path(@reservation.room), class: 'btn btn-secondary' %>
+    <%= form.submit '確定', class: 'btn btn-primary me-2' %>
+    <%= link_to '戻る', new_room_reservation_path(@room), class: 'btn btn-secondary' %>
   </div>
+<% end %>
+
 </div>

@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root to: 'home#index'
   get 'home/index'
-  get 'pages/show'
   get 'reservations/index'
   get 'reservations/show'
   get 'reservations/new'
@@ -20,7 +19,6 @@ Rails.application.routes.draw do
   get 'rooms/:room_id/reservations', to: 'reservations#index', as: 'room_reservations'
   devise_for :users
   resources :rooms, only: [:index, :show, :new, :create]
-  resources :pages, only: [:show]
   resources :reservations
   resources :rooms do
     resources :reservations do

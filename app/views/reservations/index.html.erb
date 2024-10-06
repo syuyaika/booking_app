@@ -30,9 +30,6 @@
         <td><%= reservation.check_out.present? ? reservation.check_out.strftime("%Y/%m/%d") : "未定" %></td>
         <td><%= number_to_currency(reservation.total_price) %></td>
         <td><%= reservation.confirmed_at.present? ? reservation.confirmed_at.in_time_zone('Asia/Tokyo').strftime("%Y/%m/%d %H:%M") : "未確定" %></td>
-        <td>
-          <%= link_to '編集', edit_room_reservation_path(reservation.room, reservation), class: 'btn btn-warning' %>
-        </td>
         <td> 
           <%= button_to '削除', [reservation.room, reservation], method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-danger' %>
         </td>

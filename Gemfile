@@ -35,6 +35,8 @@ gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'jquery-turbolinks'
 gem 'pry'
+gem 'bigdecimal'
+gem 'mutex_m'
 
 
 group :development, :test do
