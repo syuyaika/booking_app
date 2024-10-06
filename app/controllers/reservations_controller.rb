@@ -9,7 +9,7 @@ class ReservationsController < ApplicationController
 
   def new
     @room = Room.find(params[:room_id])
-    @reservation = @room.reservations.build
+    @reservation = Reservation.new
   end
 
   def create
@@ -17,6 +17,7 @@ class ReservationsController < ApplicationController
     @reservation = @room.reservations.build(reservation_params)
     @reservation.user = current_user
     if @reservation.save
+      @reservation.update(confirmed_at: Time.current)
       redirect_to confirmation_room_reservation_path(@room, @reservation)
     else
       render :new

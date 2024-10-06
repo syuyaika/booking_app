@@ -55,3 +55,22 @@ ja:
         check_in: "チェックイン"
         check_out: "チェックアウト"
         guests: "人数"
+      room:
+        name: "施設名"
+        description: "施設詳細"
+        price: "料金"
+        address: "住所"
+    errors:
+      messages:
+        blank: "を入力してください"
+        not_a_number: "は数値で入力してください"
+      template:
+        header:
+          one: "1件のエラーが発生しました"
+          other: "%{count}件のエラーが発生しました"
+  errors:
+    template:
+      header:
+        one: "1件のエラーが発生しました"
+        other: "%{count}件のエラーが発生しました"
+      body: "以下の項目を修正してください。"

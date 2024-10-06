@@ -26,7 +26,20 @@
   }
   
   .username {
-    margin-left: 8px;
+    margin-right: 8px;
+    cursor: pointer;
+  }
+
+  .dropbtn {
+    cursor: pointer;
+  }
+
+  .user-info img {
+    cursor: pointer;
+  }
+
+  .user-info {
+    position: relative;
     cursor: pointer;
   }
   
@@ -34,8 +47,8 @@
     display: inline-block;
   }
   
-  .dropdown .dropbtn {
-    background-color: #f9f9f9;
+  .dropbtn {
+    background-color: #f1c132;
     color: black;
     padding: 10px;
     font-size: 16px;
@@ -50,6 +63,8 @@
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    top: 60px;
+    text-align: center;
   }
   
   .dropdown:hover .dropdown-content {
@@ -64,14 +79,7 @@
   }
   
   .dropdown-content a:hover {
-    background-color: #f1f1f1;
-  }
-  
-  header {
-    display: flex;
-    justify-content: flex-end; /* 右端に配置 */
-    padding: 10px; /* 必要に応じてパディングを追加 */
-    background-color: #f8f9fa; /* ヘッダーの背景色を設定（必要に応じて） */
+    background-color: #f4ad56;
   }
   
   .user-info {
@@ -103,3 +111,59 @@
     display: block; /* ホバー時にメニューを表示 */
   }
   
+  .navbar-logo {
+    font-size: 24px; /* フォントサイズを設定 */
+    font-weight: bold; /* フォントを太字に */
+    text-decoration: none; /* リンクの下線を消す */
+    color: #333; /* 文字色を設定 */
+  }
+
+  .navbar {
+    display: flex; /* フレックスボックスを使用 */
+    justify-content: space-between; /* 左右に要素を配置 */
+    align-items: center; /* 垂直方向に中央揃え */
+    padding: 10px;
+    background-color: #f1c132; /* 背景色を設定 */
+  }
+  
+  .navbar-left {
+    flex: 0 0 auto; /* 幅を自動調整に変更 */
+}
+
+  .navbar-right {
+    display: flex; /* 右側のコンテンツもフレックスボックス */
+    align-items: center; /* 垂直方向の中央揃え */
+  }
+
+
+  .show {
+    display: block;
+  }
+
+
+  .search-container {
+    display: flex; /* 子要素を横並びにする */
+    justify-content: center;
+    gap: 20px; /* 各要素の間にスペースを空ける */
+    align-items: center; /* ラベルと入力フォームを垂直方向に中央揃え */
+  }
+  
+  .search-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+  
+  @media (max-width: 768px) {
+    .search-container {
+      flex-direction: column; /* 画面幅が狭い場合は縦並びにする */
+    }
+  }
+
+  .search-button {
+    align-self: flex-end; /* ボタンをテキストフィールドの底辺に合わせる */
+  }
+  
+  thead {
+    background-color: transparent; /* 背景色を透明にする */
+  }

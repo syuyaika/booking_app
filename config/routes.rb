@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'home#index'
+  get 'home/index'
   get 'pages/show'
   get 'reservations/index'
   get 'reservations/show'
@@ -16,7 +18,6 @@ Rails.application.routes.draw do
   get 'profile/edit', to: 'users#edit_profile', as: 'edit_profile'
   patch 'profile/edit', to: 'users#update_profile', as: 'update_profile'
   get 'rooms/:room_id/reservations', to: 'reservations#index', as: 'room_reservations'
-  root 'rooms#index'
   devise_for :users
   resources :rooms, only: [:index, :show, :new, :create]
   resources :pages, only: [:show]
@@ -26,7 +27,10 @@ Rails.application.routes.draw do
       member do
         get 'confirmation', to: 'reservations#reservation_confirmation'
       end
-    end  
+      collection do
+        get 'search'
+      end
+    end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,6 +1,7 @@
-<h1>登録済み施設一覧</h1>
+<h1 class="text-center my-4">登録済み一覧</h1>
 
-<table>
+<div style="overflow-x: auto;">
+<table class="table table-stried table-hover tablebordered" style="min-width: 1200px;">
   <thead>
     <tr>
       <th>画像</th>
@@ -8,7 +9,8 @@
       <th>紹介文</th>
       <th>宿泊料金</th>
       <th>作成日</th>
-      
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -21,10 +23,10 @@
         </td>
         <td><%= link_to room.name, new_room_reservation_path(room) %></td>
         <td><%= room.description %></td>
-        <td><%= room.price %> /日</td>
+        <td><%= room.price %> 円/日</td>
         <td><%= room.created_at.strftime("%Y/%m/%d") %></td>
         <td>
-        <%= link_to '編集', edit_room_path(room), class: 'btn btn-primary' %>
+        <%= link_to '編集', edit_room_path(room), class: 'btn btn-warning' %>
         </td>
         <%= form_with(url: room_path(room), method: :delete, local: true, style: "display:inline") do %>
         <td>
@@ -35,3 +37,4 @@
     <% end %>
   </tbody>
 </table>
+</div>
