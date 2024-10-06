@@ -1,0 +1,40 @@
+<h1 class="text-center my-4">予約済み一覧</h1>
+
+<div style="overflow-x: auto;">
+<table class="table table-stried table-hover tablebordered" style="min-width: 1200px;">
+  <thead>
+    <tr>
+      <th>画像</th>
+      <th>施設名</th>
+      <th>紹介文</th>
+      <th>チェックイン日</th>
+      <th>チェックアウト日</th>
+      <th>合計金額</th>
+      <th>予約確定日時</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reservations.each do |reservation| %>
+      <tr>
+        <td>
+          <% if reservation.room.image.attached? %>
+            <%= image_tag reservation.room.image, size: "100x100" %>
+          <% end %>
+        </td>
+        <td><%= link_to reservation.room.name, reservation.room %>
+        </td>
+        <td><%= reservation.room.description %></td>
+        <td><%= reservation.check_in.present? ? reservation.check_in.strftime("%Y/%m/%d") : "未定" %></td>
+        <td><%= reservation.check_out.present? ? reservation.check_out.strftime("%Y/%m/%d") : "未定" %></td>
+        <td><%= number_to_currency(reservation.total_price) %></td>
+        <td><%= reservation.confirmed_at.present? ? reservation.confirmed_at.in_time_zone('Asia/Tokyo').strftime("%Y/%m/%d %H:%M") : "未確定" %></td>
+        <td> 
+          <%= button_to '削除', [reservation.room, reservation], method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

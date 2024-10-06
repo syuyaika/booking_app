@@ -1,0 +1,22 @@
+<div class="container my-4">
+<h2 class="text-center mb-4">予約内容の確認</h2>
+
+<div class="card">
+    <div class="card-body">
+      <p>チェックイン: <%= @reservation.check_in.strftime("%Y/%m/%d") %></p>
+      <p>チェックアウト: <%= @reservation.check_out.strftime("%Y/%m/%d") %></p>
+      <p>日数: <%= @stay_duration %> 日</p>
+      <p>人数: <%= @reservation.guests %> 人</p>
+      <p>お支払い金額: <%= number_to_currency(@total_price) %></p>
+      <p>上記内容で正しければ「確定」ボタンを押してください。</p>
+    </div>
+  </div>
+
+<%= form_with model: [@room, @reservation], local: true do |form| %>
+  <div class="text-center mt-4">
+    <%= form.submit '確定', class: 'btn btn-primary me-2' %>
+    <%= link_to '戻る', new_room_reservation_path(@room), class: 'btn btn-secondary' %>
+  </div>
+<% end %>
+
+</div>

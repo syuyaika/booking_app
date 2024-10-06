@@ -13,3 +13,157 @@
  *= require_tree .
  *= require_self
  */
+
+ .header-content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .user-info {
+    position: relative;
+    margin-right: 20px;
+  }
+  
+  .username {
+    margin-right: 8px;
+    cursor: pointer;
+  }
+
+  .dropbtn {
+    cursor: pointer;
+  }
+
+  .user-info img {
+    cursor: pointer;
+  }
+
+  .user-info {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    display: inline-block;
+  }
+  
+  .dropbtn {
+    background-color: #f1c132;
+    color: black;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 60px;
+    text-align: center;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f4ad56;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center; /* アイコンとユーザー名を縦中央に配置 */
+  }
+  
+  .username {
+    margin-left: 10px; /* アイコンとユーザー名の間にスペースを追加 */
+  }
+  
+  /* ドロップダウンメニューのスタイル（必要に応じて追加） */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0; /* 右端に表示 */
+    background-color: #f9f9f9; /* メニューの背景色 */
+    min-width: 160px; /* メニューの最小幅 */
+    box-shadow: 0px 8px 16px 0px rgba(87, 53, 226, 0.2);
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block; /* ホバー時にメニューを表示 */
+  }
+  
+  .navbar-logo {
+    font-size: 24px; /* フォントサイズを設定 */
+    font-weight: bold; /* フォントを太字に */
+    text-decoration: none; /* リンクの下線を消す */
+    color: #333; /* 文字色を設定 */
+  }
+
+  .navbar {
+    display: flex; /* フレックスボックスを使用 */
+    justify-content: space-between; /* 左右に要素を配置 */
+    align-items: center; /* 垂直方向に中央揃え */
+    padding: 10px;
+    background-color: #f1c132; /* 背景色を設定 */
+  }
+  
+  .navbar-left {
+    flex: 0 0 auto; /* 幅を自動調整に変更 */
+}
+
+  .navbar-right {
+    display: flex; /* 右側のコンテンツもフレックスボックス */
+    align-items: center; /* 垂直方向の中央揃え */
+  }
+
+
+  .show {
+    display: block;
+  }
+
+
+  .search-container {
+    display: flex; /* 子要素を横並びにする */
+    justify-content: center;
+    gap: 20px; /* 各要素の間にスペースを空ける */
+    align-items: center; /* ラベルと入力フォームを垂直方向に中央揃え */
+  }
+  
+  .search-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+  
+  @media (max-width: 768px) {
+    .search-container {
+      flex-direction: column; /* 画面幅が狭い場合は縦並びにする */
+    }
+  }
+
+  .search-button {
+    align-self: flex-end; /* ボタンをテキストフィールドの底辺に合わせる */
+  }
+  
+  thead {
+    background-color: transparent; /* 背景色を透明にする */
+  }
